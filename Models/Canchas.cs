@@ -1,13 +1,12 @@
-﻿namespace ANDyNA_v2.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ANDyNA_v2.Models
 {
     public class Canchas
     {
+        [Key]
         public int Id { get; set; }
-        public int costo { get; set; }
-        public DateTime HoraInicio { get; set; }
-        public DateTime HoraFinal { get; set; }
-        public string? Detalles { get; set; }
-        public DateTime Fecha { get; set; }
-        public int Horas { get; set; }
+        public int Numero { get; set; }
+        public required string Descripcion { get; set; }
     }
 }
