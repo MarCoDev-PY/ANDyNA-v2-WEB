@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace ANDyNA_v2.Controllers
 {
+    //Añadiendo comentarios
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
