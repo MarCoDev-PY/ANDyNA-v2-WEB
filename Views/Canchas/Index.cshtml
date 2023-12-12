@@ -13,46 +13,21 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.costo)
+                @Html.DisplayNameFor(model => model.Numero)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.HoraInicio)
+                @Html.DisplayNameFor(model => model.Descripcion)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HoraFinal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Detalles)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fecha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Horas)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.costo)
+                @Html.DisplayFor(modelItem => item.Numero)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.HoraInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoraFinal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Detalles)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Horas)
+                @Html.DisplayFor(modelItem => item.Descripcion)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

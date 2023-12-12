@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ANDyNA_v2.Migrations
 {
     [DbContext(typeof(ANDyNA_v2Context))]
-    [Migration("20231207205146_Initial")]
+    [Migration("20231209155114_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -26,22 +26,11 @@ namespace ANDyNA_v2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Detalles")
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("HoraFinal")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("HoraInicio")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Horas")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("costo")
+                    b.Property<int>("Numero")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");

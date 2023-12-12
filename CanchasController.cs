@@ -54,7 +54,7 @@ namespace ANDyNA_v2
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,costo,HoraInicio,HoraFinal,Detalles,Fecha,Horas")] Canchas canchas)
+        public async Task<IActionResult> Create([Bind("Id,Numero,Descripcion")] Canchas canchas)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace ANDyNA_v2
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,costo,HoraInicio,HoraFinal,Detalles,Fecha,Horas")] Canchas canchas)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,numero,Descripcion")] Canchas canchas)
         {
             if (id != canchas.Id)
             {
