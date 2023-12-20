@@ -42,17 +42,18 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Acerca de" asp-action="">Acerca de</a>
                         </li>
                     </ul>
-
-                    <!--BOTON PARA INICIAR SESION-->
-                    <div class="align-baseline">
-                        <h1 class="display-3"></h1>
-                        <button>Iniciar Sesion</button>
+                    <div class="d-flex">
+                        <span class="navbar-text">
+                            Nombre de usuario
+                        </span>
+                        <a class="nav-link" asp-controller="Login" asp-action="Logout">CERRAR SESION</a>
                     </div>
-
                 </div>
             </div>
         </nav>
     </header>
+    
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

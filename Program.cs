@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ANDyNA_v2.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ANDyNA_v2Context>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("ANDyNA_v2Context") ?? throw new InvalidOperationException("Connection string 'ANDyNA_v2Context' not found.")));
@@ -9,6 +10,13 @@ builder.Services.AddDbContext<ANDyNA_v2Context>(options =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+/*builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+.AddCookie(option => {
+    option.LoginPath = "/Login/Index";
+    option.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+    option.AccessDeniedPath = "/Home/Privacy";
+});*/
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -27,6 +35,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Inicio}/{action=Index}/{id?}");
 
 app.Run();
